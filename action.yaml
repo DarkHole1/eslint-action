@@ -10,9 +10,12 @@ inputs:
   source-root:
     description: Root directory to lint files in.
     required: false
+  node-root:
+    description: Root directory to find node_modules
 runs:
   using: docker
   image: Dockerfile
   args:
   - "${{ inputs.repo-token }}"
   - "${{ inputs.source-root }}"
+  - "${{ inputs.node-root }}"
